@@ -1,0 +1,442 @@
+----------------------------- LESSON 1 -----------------------------
+
+
+
+oop is a new way of looking at things :
+
+1. we see them as objects in the space we want
+to call and use in our program
+
+2. every object has a relationship between the others
+and we need to understand it ahead of time
+
+3. the difference between DC and CS :
+DS - logical solving data and manipulating it
+CS - making complex servers and systems ( OOP )
+
+Class and objects are like saying class and instances
+we need to understand that when we use a class and
+make a instance out of it , we are actually creating a
+new object of the class :
+Example - class fruit , object banana, apple
+
+syntax to make classes :
+- the name of the file is stored inside "models" directory
+- the name of the class is "CamelCase"
+
+Creating a instance :
+- import the class file "from models.class name import *"
+- make a variable that is equal to the class with brackets
+and pass inside the properties it is excepting to get from the
+constructor defined inside
+
+Getting efficient information :
+- the method __dict__
+
+Getters and Setters :
+- Getter - gets the calue of a attribute
+- Setter - sets a values of a attribute when the code runs ( dosent change the code )
+- Delalter - deletes the attribute when the main runs
+
+
+Class Constructor :
+- we are defining inside of it the properties we are expecting to get
+- we are defining inside the methods we are logically going to need for this class
+
+The word : self :
+- this word will always be first written because that is how we
+are choosing on what veriable to run the class methods and rules
+
+
+
+
+
+
+--------------- LESSON 2 -----------------
+
+
+
+
+
+The bigger picture :
+- OOP is a way to prevent spaghetti code and tangeled up in big projects
+- we wont call other function anymore we are going to use classes and to make
+instaces and inhert properties and methods to use
+- when there is something to save in the SQL database we will need to make a instance
+of it ( that is the firt connection of DS and CS )
+
+Class - the spcial file with charactersitics
+Object - the insance that i can make from the class
+attributes - different characteristics that i need to pass in / the class
+is requiring me to pass in to make a instance
+# Human species is class , Omer is object , black hair is attributes #
+
+THE 2 HATS OF PROGRAMMING ( NEED TO UNDERSTAND MORE ) :
+One writes the objects and how they work
+Two writes the software and relationship between them
+
+Constructor :
+- every class has a default constructor value
+- we are inserting inside values we are expecting to get from the instances
+
+Methods :
+- we make them isnide the class itself indented into the class
+- we call them by making a class instance and then using on it the method
+
+ISINSTANCE :
+- receive 2 parameters : instance and class
+- returns TRUE OR FALSE
+
+# # Everytime the code is running it creates instances from the beginning again
+In other words the instances live every time all over again
+
+Private and Public classes :
+- prevent working around methods that are built to prevent errors or
+make a logical mistake while using the class
+- a private attribute allows us to access it only by using methods inside of it
+prebuilt logic that we need to work with
+
+# in most of the times users will make the objects and parameters , it is a input from the
+User. we must make sure that the logic works like it is supposed to and make it work
+
+Getters and Setter methods for private attributes :
+- they have specific methods we need to write for them
+
+Syntax : Getter
+@property
+def course_name(self)
+return self.__course_name
+
+Syntax : Setter
+@course_name.setter
+def course_name(self, course_name):
+self.__course_name = course_name
+
+Running over attributes with new values ( public attribute )
+"ai_course.course_name" = Cyber ( when code runs value changes )
+
+Decorators :
+- hidden peaces of code that are function we use
+- we first create the decorator as a function like this
+
+def my_decorator(function):
+    def wrapper():
+        print(1,2,3)
+    return wrapper
+
+- second step is to use it above the function we want to
+
+@my_decorator
+def say_hello():
+    print("one, two, three")
+
+# In simple words decorator is :
+A function that is hidden and has inside a sandwich logic : step one is the logic of the
+A decorator , step 2 runs the function logic we used the decorator on
+
+Encapsulation :
+- giving a wrapper to the code / usage of logic in the code from outside
+- making a attribute private / abstract is making it private
+
+
+
+
+
+------------------------ LESSON 3 ---------------------------
+
+
+
+
+
+Class important Question :
+
+Python as a language :
+- not protective
+- the code dosent rais an error before if we pass a wrong attribute
+- the error will happen when we run the code ( potential bug )
+
+NOTE :
+# Python is a hard language to make production code from because it doesn't
+have a protection layer for important understanding of the elements inside the code
+that are running , until it is running ( Risky )
+
+
+Python Recursion :
+- important concept to understand in programming that is not directly related to OOP
+- in simple words : a function calling itself
+- the code is receiving 2 parameters ( start, end) one is known and the other is unknown
+- we give the function a condition that will run again and again until it meets one of them
+- Recursion will eventually reach a Infinite loop and crash the code
+- We must have a Ending condition so it stops
+
+syntax recursion example :
+def recursion_sum(start, end):
+if end  > start:
+    return end + recursion_sum(start, end - 1 )
+else:
+    return end
+
+
+Why we need recursion ? :
+- Recursion comes from math world
+- Solving the problem in steps , one after the other slowly make it more complex
+  And that is how we are solving it.
+- In Computer science it is not common while daily work , it is more a job interview question
+
+
+
+
+-------------------- LESSON 4 ----------------------
+
+
+
+
+
+ENUM CLASS :
+
+- Meaning :
+A special class that represents a group of constants. Used in classes when we are creating a specific option that is allowed to be inserted inside.
+
+- Immutable :
+This is a immutable class that after we define it , we can't change it after that because
+It won't be special anymore. We can change it only inside the code
+
+- Iterable :
+	We can iterate over them in loops , very useful inside to see all the options inside of the
+	Enum class we are using ( makes it easy )
+
+- Unique and Static value :
+We can't have 2 same values that are equal to each other , only unique and different. Static means we can edit them during the run. Only in the code before we run it.
+
+When would we want to us ENUM :
+- We know ahead of time all the options before we run the code ( game level for example )
+- Student name - not a good option for Enum , we want it to be “Free choice”
+- Improving code readability , easy to understand what we are expected to perform \
+- Preventing invalid values - in the main inserting invalid values , makes a validation eas
+- Is a closed list of values ( like in visa application choosing a country will be enum )
+
+Written in CamelCase :
+- we import it "from enum import Enum"
+- we define it inside the "class name(Enum)"
+
+syntax example of enum class :
+class Difficulty(Enum):
+    LOW_LEVEL = 'low'
+    MEDIUM_LEVEL = 'mid'
+    HARD_LEVEL = 'hard'
+
+using is inside the main :
+- get values or name
+
+syntax main enum : inserting the enum in a class and using it
+
+if __name__ == "main":
+    my_difficulty = Difficulty.HARD_LEVEL
+
+    other_class = Other( difficulty level: my_difficulty )
+
+
+
+
+
+----------------------- LESSON 6 ----------------------
+
+
+
+
+
+Python inheritance :
+- subclass that inherit from superclass
+- we need to use it wisely
+
+# problems in inheritance :
+Makes duplicates of code , doesn't look good , maintenances the code is complicated
+
+# Smart programmer :
+Will decide wisely how to use inheritance inside of class organized that will drip down to all the children classes slowly
+
+The way to know if we need to use inheritance is :
+"Is a Relationship" test
+- Volvo is a Car ? - yes
+- Engine is a Car ? - no
+
+Syntax :
+- create the superclass
+- create the subclass
+- import to the superclass to the subclass
+- insert the superclass name inside the brackets of the subclass
+
+
+@overrides
+- making a new usage for a method in the subclass
+- Have the basic method as an inheritance default structure and insert our own logic inside
+
+When using override on a method that we inherited from a parent class :
+- We are making a new logic inside a method
+- We are using the combination of parent logic and child logic
+
+
+Super keyword :
+- Parent superclass wants to receive the attributes with constructors
+- Super is referencing the “parent classes” if there are inheritances.
+- Main usage is to use constructors in child class and connect it to parent class
+- We will need to use super to give the parent class all the information it needs to create both classes
+
+
+syntax :
+from models.Vehicle import *
+class Car(Vehicle):
+    def __init__(self, name, model, year):
+        super().__init__(name, model) # superclass
+        self.year = year # subclass
+
+
+
+
+
+------------------------ LESSON 6 ------------------------
+
+
+
+
+
+Important to understand :
+how creating a class without a instance is inside the Memory management :
+- We must make a instance of a class to make sure the class is running
+- In this step the class will enter the heap as a object ( declaration )
+
+
+Object class :
+- methods we inherit by default when we make a class
+
+
+The equal method :
+- we are defining how it is checking the parameters we insert inside
+- then we call the function and insert inside the parameter we wanted to check
+
+
+syntax of the equal method :
+
+def__eq__(self, other):
+    return self.brand == other.brand
+
+Another way to use it :
+
+def__eq__(self, other):
+    return self.brand == other.brand and self.horse_power == other.horse_power
+
+
+Polymorphism :
+
+- The ability of a object to take multiple forms
+- Innumerable forms
+- Common concept in programming
+- Taking a object and giving it a different shape
+
+Example :
+Car class inheritance from a superclass is Polymorphism
+
+
+
+Abstract class :
+- very useful protection in python and common
+- we cant create instances of this class only inherit from it
+- helps prevent error handling of the creation of instances from a class
+that has no meaning to system :
+
+Example :
+Vehicle class - Superclass - abstract - kind , year and method of calculating price
+Car class - Subclass - inherits - kind , year, method of calculating price - adds - size, name, kmh
+
+# we don't want instances of a vehicle class just the methods in it and the attributes we inherit from it
+
+How abstract makes our code more protected / prevents workarounds :
+- When we have a abstract class with a @abstractmethod annotation above the function
+- We must call it threw override annotation in the subclass ( child class )
+
+
+Syntax :
+from abc import *
+class Car(vehicle, ABC):
+    def __init__(self):
+
+    @abstractmethod
+    def print_attributes(self):
+        print(__dict__)
+
+
+Abstract method above the constructor :
+- we must define which class can inherit
+- extra layer of protection
+
+
+Syntax :
+from abc import *
+class Car(vehicle, ABC):
+
+    @abstractmethod
+    def __init__(self):
+
+    @abstractmethod
+    def print_attributes(self):
+        print(__dict__)
+
+
+Interface :
+- An interface is specifically not supported in python but very common and important in oop as object oriented programs
+- Kind of “contract” we must work like this :
+  I will define which methods each class needs to define and each class must define it
+- Only the rules ( contracts ) not the methods themselves
+- Every class that inherits from the superclass must work like the interface ( contract )
+
+
+# The world is divided into 2 :
+1. Classes that are listening to the interface
+2. Classes that are not listening to the interface
+
+
+In Python, we will define a interface with a abstract class ( make rules for other classes )
+
+Superclass Vs Abstract Vs Interface :
+- Superclass : you inherent properties and methods
+- Abstract : can't create instances or must use specific methods inside to make instance
+- Interface : rules for using this class are ( 1. Use this method and that )
+
+
+
+
+------------------------------ LESSON 7 ------------------------------
+
+
+Important notes :
+#ask these questions before making a class abstract :
+- Is this class inheriting its properties only ?
+- Is this class going to have instances of this class ?
+
+- When making a method in the abstract class we are making the child class must \
+Use the methods we inserted ( doesn't matter how )
+
+Using dots inside methods :
+- help other programmers understand what we are expecting to get
+
+Composition BS Inheritance :
+Car is a Vehicle ? - yes - inheritance of a class
+Car has a Engine ? - yes - composition ( properties inside of car )
+
+
+Multiple inheritance :
+- inheriting from multiple superclass to one subclass
+- we dont use "super" we use self
+- we insert the parent properties first in the constructor
+
+syntax :
+from models.Name import *
+from models.Id import *
+from models.Age import *
+
+
+def __init__(self, name, id, age):
+    Name.__init__(self, name)
+    Id.__init__(self, id)
+    Age.__init__(self, age)
+
